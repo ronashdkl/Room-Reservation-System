@@ -33,3 +33,7 @@
     <?php }
 ?>
 </table>
+
+<br/>
+
+<?php //$this->context->renderPartial('_copyright'); ?>
