@@ -2,7 +2,8 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'News Reader';
+$this->params['breadcrumbs'][] = 'Welome';
 ?>
 <div class="site-index">
 
