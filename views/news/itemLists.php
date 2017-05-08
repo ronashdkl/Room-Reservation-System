@@ -36,4 +36,4 @@
 
 <br/>
 
-<?php //$this->context->renderPartial('_copyright'); ?>
+<?php $this->context->renderPartial('_copyright'); ?>
