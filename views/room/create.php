@@ -15,6 +15,14 @@ use yii\helpers\ArrayHelper;
 <?php if($modelSaved) {?>
 <div class="alert alert-success">
     Model Ready to saved!
+     <br /><br />    These are values: 
+     <br />    Floor: <?php echo $model->floor; ?> <br />
+      Room Number: <?php echo $model->room_number; ?> <br />   
+      Has conditioner: <?php echo Yii::$app->formatter->asBoolean($model->has_conditioner); ?> <br />
+      Has TV: <?php echo Yii::$app->formatter->asBoolean($model->has_tv); ?> <br />
+      Has phone: <?php echo Yii::$app->formatter->asBoolean($model->has_phone); ?> <br />  
+      Available from (mm/dd/yyyy): <?php echo Yii::$app->formatter->asDate($model->available_from,'php:m/d/Y'); ?> <br />  
+      Price per day: <?php echo Yii::$app->formatter->asCurrency($model->price_per_day,'EUR'); ?> <br /> 
 </div>
 
 <?php } ?>
