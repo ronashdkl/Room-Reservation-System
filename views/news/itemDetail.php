@@ -14,3 +14,5 @@
 Title : <b><?= $item['title'] ?></b>
 <br/>
 Date:<b><?= $item['date'] ?></b>
+<br/>
+<?php //$this->context->renderPartial('_copyright'); ?>
