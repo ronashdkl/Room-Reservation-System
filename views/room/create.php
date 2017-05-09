@@ -26,7 +26,7 @@ use yii\helpers\ArrayHelper;
         if (isset($model->fileImage)) {
             ?>
            
-          <?= Html::img(Yii::getAlias('@uploadedfilesdir/'). $model->fileImage->name, ['alt'=>'Room Picture', 'class'=>'img-round']);?>
+          <?= Html::img(Yii::$app->request->baseUrl.'/image/'. $model->fileImage->name, ['alt'=>'Room Picture', 'class'=>'img-round']);?>
  <?php
         }
         ?>
