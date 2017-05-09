@@ -52,6 +52,8 @@ $config = [
         
     ],
     'params' => $params,
+    'aliases' => ['@uploadedfilesdir' => '@app/uploadedfiles' ],
+
 
 ];
 
