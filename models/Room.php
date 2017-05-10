@@ -36,12 +36,12 @@ class Room extends \yii\db\ActiveRecord
     {
         return [
             [['floor', 'room_number', 'available_from'], 'required'],
-            [['floor', 'room_number', 'integer'],
-            ['has_conditioner', 'has_tv', 'has_phone'], 'integer','min'=>0,'max'=>1],
+            [['floor', 'room_number'], 'integer'],
+            [['has_conditioner', 'has_tv', 'has_phone'], 'integer','min'=>0,'max'=>1],
             [['available_from'], 'safe'],
             [['price_per_day'], 'number'],
-            [['description'], 'string'],
-        ];
+            ['description', 'string'],
+    ];
     }
 
     /**
