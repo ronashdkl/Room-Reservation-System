@@ -21,17 +21,38 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+    'tableOptions'=>['class'=>'table table-hover'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
+//            'id',
             'floor',
             'room_number',
-            'has_conditioner',
-            'has_tv',
-            // 'has_phone',
-            // 'available_from',
-            // 'price_per_day',
+           
+//            [
+//                'attribute'=>'has_conditioner',
+//                'value'=>function($model){
+//                 return  Yii::$app->formatter->asBoolean($model->has_conditioner);      
+//                }
+//            ],
+//            [
+//                'attribute'=>'has_tv',
+//                'value'=>function($model){
+//                 return  Yii::$app->formatter->asBoolean($model->has_tv);      
+//                }
+//            ],
+//           [
+//                'attribute'=>'has_phone',
+//                'value'=>function($model){
+//                 return  Yii::$app->formatter->asBoolean($model->has_phone);      
+//                }
+//            ],
+            'available_from',
+            [
+                'attribute'=>'price_per_day',
+                'value'=> function($model){
+                return Yii::$app->formatter->asCurrency($model->price_per_day,'EUR');
+                }
+            ],
             // 'description:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
