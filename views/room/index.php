@@ -46,7 +46,12 @@ $this->params['breadcrumbs'][] = $this->title;
 //                 return  Yii::$app->formatter->asBoolean($model->has_phone);      
 //                }
 //            ],
-            'available_from',
+               [
+                'attribute'=>'available_from',
+                'value'=>function($model){
+                 return  Yii::$app->formatter->asDate($model->available_from,'php:Y-M-d D');      
+                }
+            ],
             [
                 'attribute'=>'price_per_day',
                 'value'=> function($model){
