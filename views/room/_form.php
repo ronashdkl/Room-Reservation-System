@@ -16,11 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'room_number')->textInput() ?>
 
-    <?= $form->field($model, 'has_conditioner')->textInput() ?>
+    <?= $form->field($model, 'has_conditioner')->checkbox() ?>
 
-    <?= $form->field($model, 'has_tv')->textInput() ?>
+    <?= $form->field($model, 'has_tv')->checkbox() ?>
 
-    <?= $form->field($model, 'has_phone')->textInput() ?>
+    <?= $form->field($model, 'has_phone')->checkbox() ?>
 
     <?= $form->field($model, 'available_from')->textInput() ?>
 
