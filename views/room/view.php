@@ -28,14 +28,41 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+//            'id',
             'floor',
             'room_number',
-            'has_conditioner',
-            'has_tv',
-            'has_phone',
-            'available_from',
-            'price_per_day',
+                    
+            [
+                'attribute'=>'has_conditioner',
+                'value'=>function($model){
+                 return  Yii::$app->formatter->asBoolean($model->has_conditioner);      
+                }
+            ],
+            [
+                'attribute'=>'has_tv',
+                'value'=>function($model){
+                 return  Yii::$app->formatter->asBoolean($model->has_tv);      
+                }
+            ],
+           [
+                'attribute'=>'has_phone',
+                'value'=>function($model){
+                 return  Yii::$app->formatter->asBoolean($model->has_phone);      
+                }
+            ],
+                     [
+                'attribute'=>'available_from',
+                'value'=>function($model){
+                 return  Yii::$app->formatter->asDate($model->available_from,'php:Y-M-d D');      
+                }
+            ],
+          
+           [
+                'attribute'=>'price_per_day',
+                'value'=> function($model){
+                return Yii::$app->formatter->asCurrency($model->price_per_day,'EUR');
+                }
+            ],
             'description:ntext',
         ],
     ]) ?>
