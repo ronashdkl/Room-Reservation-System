@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Room;
-use app\models\RoomSearch;
+use app\models\Customer;
+use app\models\CustomerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,9 +12,9 @@ use \yii\web\Response;
 use yii\helpers\Html;
 
 /**
- * RoomController implements the CRUD actions for Room model.
+ * CustomerController implements the CRUD actions for Customer model.
  */
-class RoomController extends Controller
+class CustomerController extends Controller
 {
     /**
      * @inheritdoc
@@ -33,12 +33,12 @@ class RoomController extends Controller
     }
 
     /**
-     * Lists all Room models.
+     * Lists all Customer models.
      * @return mixed
      */
     public function actionIndex()
     {    
-        $searchModel = new RoomSearch();
+        $searchModel = new CustomerSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -49,7 +49,7 @@ class RoomController extends Controller
 
 
     /**
-     * Displays a single Room model.
+     * Displays a single Customer model.
      * @param integer $id
      * @return mixed
      */
@@ -59,7 +59,7 @@ class RoomController extends Controller
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
-                    'title'=> "Room #".$id,
+                    'title'=> "Customer #".$id,
                     'content'=>$this->renderAjax('view', [
                         'model' => $this->findModel($id),
                     ]),
@@ -74,7 +74,7 @@ class RoomController extends Controller
     }
 
     /**
-     * Creates a new Room model.
+     * Creates a new Customer model.
      * For ajax request will return json object
      * and for non-ajax request if creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -82,7 +82,7 @@ class RoomController extends Controller
     public function actionCreate()
     {
         $request = Yii::$app->request;
-        $model = new Room();  
+        $model = new Customer();  
 
         if($request->isAjax){
             /*
@@ -91,7 +91,7 @@ class RoomController extends Controller
             Yii::$app->response->format = Response::FORMAT_JSON;
             if($request->isGet){
                 return [
-                    'title'=> "Create new Room",
+                    'title'=> "Create new Customer",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
@@ -102,15 +102,15 @@ class RoomController extends Controller
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Create new Room",
-                    'content'=>'<span class="text-success">Create Room success</span>',
+                    'title'=> "Create new Customer",
+                    'content'=>'<span class="text-success">Create Customer success</span>',
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
         
                 ];         
             }else{           
                 return [
-                    'title'=> "Create new Room",
+                    'title'=> "Create new Customer",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
@@ -135,7 +135,7 @@ class RoomController extends Controller
     }
 
     /**
-     * Updates an existing Room model.
+     * Updates an existing Customer model.
      * For ajax request will return json object
      * and for non-ajax request if update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
@@ -153,7 +153,7 @@ class RoomController extends Controller
             Yii::$app->response->format = Response::FORMAT_JSON;
             if($request->isGet){
                 return [
-                    'title'=> "Update Room #".$id,
+                    'title'=> "Update Customer #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
@@ -163,7 +163,7 @@ class RoomController extends Controller
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Room #".$id,
+                    'title'=> "Customer #".$id,
                     'content'=>$this->renderAjax('view', [
                         'model' => $model,
                     ]),
@@ -172,7 +172,7 @@ class RoomController extends Controller
                 ];    
             }else{
                  return [
-                    'title'=> "Update Room #".$id,
+                    'title'=> "Update Customer #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
@@ -195,7 +195,7 @@ class RoomController extends Controller
     }
 
     /**
-     * Delete an existing Room model.
+     * Delete an existing Customer model.
      * For ajax request will return json object
      * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
@@ -223,7 +223,7 @@ class RoomController extends Controller
     }
 
      /**
-     * Delete multiple existing Room model.
+     * Delete multiple existing Customer model.
      * For ajax request will return json object
      * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
@@ -254,15 +254,15 @@ class RoomController extends Controller
     }
 
     /**
-     * Finds the Room model based on its primary key value.
+     * Finds the Customer model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Room the loaded model
+     * @return Customer the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Room::findOne($id)) !== null) {
+        if (($model = Customer::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

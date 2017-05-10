@@ -50,8 +50,8 @@ class Reservation extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'room_id' => 'Room ID',
-            'customer_id' => 'Customer ID',
+            'room_id' => 'Room Number',
+            'customer_id' => 'Customer Name',
             'price_per_day' => 'Price Per Day',
             'date_from' => 'Date From',
             'date_to' => 'Date To',

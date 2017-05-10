@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Room */
+/* @var $model app\models\Customer */
 ?>
-<div class="room-update">
+<div class="customer-update">
 
     <?= $this->render('_form', [
         'model' => $model,
