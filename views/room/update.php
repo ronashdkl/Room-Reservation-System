@@ -2,15 +2,15 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Room */
 
-$this->title = 'Create Room';
+$this->title = 'Update Room: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Rooms', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="room-create">
+<div class="room-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
