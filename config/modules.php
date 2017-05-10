@@ -7,5 +7,8 @@
  */
 
 return [
-    'gridview' => [ 'class' => '\kartik\grid\Module' ] 
+    'gridview' => [ 'class' => '\kartik\grid\Module' ] ,
+     'admin' => [
+            'class' => 'app\modules\admin',
+        ],
     ];

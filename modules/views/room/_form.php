@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use kartik\checkbox\CheckboxX;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Room */
@@ -17,22 +17,18 @@ use kartik\checkbox\CheckboxX;
 
     <?= $form->field($model, 'room_number')->textInput() ?>
     <?=
-    $form->field($model, 'has_conditioner')->widget(CheckboxX::classname(), [
-        'autoLabel' => true
-    ])->label(false);
+    $form->field($model, 'has_conditioner')->checkbox()
     ?>
 <?=
-$form->field($model, 'has_tv')->widget(CheckboxX::classname(), [
-    'autoLabel' => true
-])->label(false);
-?>
+$form->field($model, 'has_tv')->checkbox()
+    ?>
+
 
 
     <?=
-    $form->field($model, 'has_phone')->widget(CheckboxX::classname(), [
-        'autoLabel' => true
-    ])->label(false);
+    $form->field($model, 'has_phone')->checkbox()
     ?>
+  
 
 
 
