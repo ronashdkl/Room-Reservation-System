@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
-
+use yii\filters\AccessControl;
 /**
  * ReservationController implements the CRUD actions for Reservation model.
  */
@@ -22,6 +22,17 @@ class ReservationController extends Controller
     public function behaviors()
     {
         return [
+             'access' => [
+             'class' => AccessControl::className(),
+              
+                'rules' => [
+                    [
+                       
+                        'allow' => true,
+                        'roles' => ['Admin'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
