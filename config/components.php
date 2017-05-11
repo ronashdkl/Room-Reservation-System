@@ -17,10 +17,10 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-       'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],
+//       'user' => [
+//            'identityClass' => 'app\models\User',
+//            'enableAutoLogin' => true,
+//        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -67,8 +67,8 @@ return [
             'SetFooter' => ['|Page {PAGENO}|'],
         ]
      
-    ]
-    
+    ],
+  
         
     ];
 
