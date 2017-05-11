@@ -11,4 +11,11 @@ return [
      'admin' => [
             'class' => 'app\modules\admin',
         ],
+     'user' => [
+        'class' => 'dektrium\user\Module',
+         'enableUnconfirmedLogin'=>true,
+         'enableConfirmation'=>true,
+          'admins' => ['ronash']
+    ],
+    'rbac' => 'dektrium\rbac\RbacWebModule',
     ];
