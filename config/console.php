@@ -23,7 +23,11 @@ $config = [
         'db' => $db,
     ],
     'params' => $params,
- 
+ 'modules' => [
+   
+    'rbac' => 'dektrium\rbac\RbacConsoleModule',
+   
+],
     /*
     'controllerMap' => [
         'fixture' => [ // Fixture generation command line.
