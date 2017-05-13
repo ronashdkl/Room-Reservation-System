@@ -26,6 +26,8 @@ AppAsset::register($this);
 
 <div class="wrap">
     <?php
+    
+  
     NavBar::begin([
         'brandLabel' => 'News Reader',
         'brandUrl' => Yii::$app->homeUrl,
@@ -36,21 +38,18 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
+         ['label' => 'Room', 'url' => ['/admin/room'], 'visible' => Yii::$app->user->can('Admin')],
+              ['label' => 'Customer', 'url' => ['/admin/customer'], 'visible' => Yii::$app->user->can('Admin')],
+              ['label' => 'Reservation', 'url' => ['/admin/reservation'], 'visible' => Yii::$app->user->can('Admin')],
+              ['label' => 'Users', 'url' => ['/user/admin'], 'visible' => Yii::$app->user->can('Admin')],
+         Yii::$app->user->isGuest ?
+    ['label' => 'Sign in', 'url' => ['/user/security/login']]
+            :
+    ['label' => 'Sign out (' . Yii::$app->user->identity->username . ')',
+        'url' => ['/user/security/logout'],
+        'linkOptions' => ['data-method' => 'post']],
+['label' => 'Register', 'url' => ['/user/registration/register'], 'visible' => Yii::$app->user->isGuest]
+            
         ],
     ]);
     NavBar::end();
