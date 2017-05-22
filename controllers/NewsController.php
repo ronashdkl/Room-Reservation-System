@@ -19,6 +19,7 @@ class NewsController extends Controller {
         $newsList = [
             ['id'=>1, 'title' => 'Nepal Election', 'date' => '2074-01-31'],
             ['id'=>2, 'title' => 'First man on the moon', 'date' => '1969-07-20']
+            
         ];
 
         return $newsList;
